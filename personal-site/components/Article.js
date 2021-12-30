@@ -12,6 +12,7 @@ const StyledArticle = styled.div`
   margin-bottom: 60px;
   img {
       width: 100%;
+      border-radius: 4px 4px 0px 0px;
   }
   button {
       background: transparent;

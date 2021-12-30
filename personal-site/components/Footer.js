@@ -5,11 +5,12 @@ const StyledFooter = styled.footer`
     color: #fff;
     text-align: center;
     padding: 50px;
-    
+    font-size: 25px;
+    font-weight: bold;
 `;
 
 export default function Footer() {
     return <StyledFooter>
-        <p>footer</p>
+        <p>CONTACT.</p>
     </StyledFooter>;
 } 

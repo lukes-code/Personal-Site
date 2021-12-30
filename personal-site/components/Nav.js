@@ -7,6 +7,10 @@ const StyledNav = styled.nav`
     border-bottom: 3px solid var(--black); 
     text-transform: uppercase;
     font-weight: bold;
+    top: 0;
+    color: var(--black);
+    z-index: 5;
+    position: relative;
     a {
         flex: 1;
     }

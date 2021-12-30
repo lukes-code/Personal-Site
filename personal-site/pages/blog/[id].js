@@ -1,14 +1,18 @@
 import { useRouter } from 'next/router'
 import GetPosts from '../../components/GetPosts'
+import Nav from '../../components/Nav'
 
 const Post = () => {
   const router = useRouter()
   const { id } = router.query;
     return (
-      <GetPosts 
-        id={id}
-        contentType="blogPost"
-      />
+      <>
+        <Nav />
+        <GetPosts 
+          id={id}
+          contentType="blogPost"
+        />
+      </>
     );
 }
 

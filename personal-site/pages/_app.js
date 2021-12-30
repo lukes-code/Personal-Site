@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
 import Footer from '../components/Footer'
-import Nav from '../components/Nav'
 import NProgress from 'nprogress';
 import styled, { createGlobalStyle } from 'styled-components';
 import Router from 'next/router';
@@ -30,7 +29,6 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyles />
-      <Nav />
       <Component {...pageProps} />
       <Footer />
     </>
