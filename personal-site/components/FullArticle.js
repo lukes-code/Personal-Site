@@ -2,12 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { TextTruncate, MakeDate } from '../helpers';
+import Markdown from 'markdown-to-jsx';
 
 const StyledArticle = styled.div`
   flex: 1;
   min-width: 350px;
-  max-width: 350px;
-  margin: 10px 30px;
+  max-width: 600px;
+  margin: 60px auto;
   margin-bottom: 60px;
   img {
       width: 100%;
@@ -29,6 +30,9 @@ const StyledArticle = styled.div`
   .article-title {
       font-weight: bold;
   }
+  img {
+      border-radius: 5px 5px 0px 0px;
+  }
 `;
 
 export default function FullArticle({ article, id, contentType }) {
@@ -40,10 +44,7 @@ export default function FullArticle({ article, id, contentType }) {
             <img src={imagePath} alt="article image" />
             <p className="article-date">{MakeDate(article.date)}</p>
             <p className="article-title">{article.title}</p>
-            <p className="article-short-text">{article.longContent}</p>
-            <Link href={linkPath}>
-                <button>Read more -></button>
-            </Link>
+            <Markdown>{article.longContent}</Markdown>
         </StyledArticle>
     );
 }

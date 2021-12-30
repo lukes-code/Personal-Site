@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { TextTruncate, MakeDate } from '../helpers';
+import Markdown from 'markdown-to-jsx';
 
 const StyledArticle = styled.div`
   flex: 1;
@@ -20,6 +21,8 @@ const StyledArticle = styled.div`
       font-weight: bold;
       font-size: 15px;
       padding: 0px;
+      display: block;
+      margin-top: 10px;
   }
   .article-date {
       color: var(--grey);
@@ -43,7 +46,7 @@ export default function Article({ article, id, contentType, isHome }) {
                     <img src={imagePath} alt="article image" />
                     <p className="article-date">{MakeDate(article.fields.date)}</p>
                     <p className="article-title">{article.fields.title}</p>
-                    <p className="article-short-text">{TextTruncate(article.fields.longContent, 125)}</p>
+                    <Markdown className="article-short-text">{TextTruncate(article.fields.longContent, 125)}</Markdown>
                     <Link href={linkPath}>
                         <button>Read more -></button>
                     </Link>
