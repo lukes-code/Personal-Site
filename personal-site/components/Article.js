@@ -47,8 +47,8 @@ export default function Article({ article, id, contentType, isHome }) {
                     <p className="article-date">{MakeDate(article.fields.date)}</p>
                     <p className="article-title">{article.fields.title}</p>
                     <Markdown className="article-short-text">{TextTruncate(article.fields.longContent, 125)}</Markdown>
-                    <Link href={linkPath}>
-                        <button>Read more -></button>
+                    <Link href={linkPath} passHref>
+                        <button>Read more -</button>
                     </Link>
                 </StyledArticle>
             }
