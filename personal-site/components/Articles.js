@@ -38,7 +38,8 @@ export default function Articles({ contentType, isHome }) {
                 <Article 
                     article={articles[i]} 
                     key={i}
-                    id={i}
+                    order={i}
+                    id={articles[i].fields.id}
                     contentType={contentType === 'blogPost' ? "blog" : "portfolio"}
                     isHome={isHome}
                 />

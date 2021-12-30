@@ -34,11 +34,11 @@ const StyledArticle = styled.div`
   }
 `;
 
-export default function Article({ article, id, contentType, isHome }) {
+export default function Article({ article, id, contentType, isHome, order }) {
     const imagePath = `https:${article.fields.image.fields.file.url}`;
     const linkPath = `/${contentType}/${id}`;
     let shouldRender = false;
-    if (id < 4 && isHome || !isHome){ shouldRender = true; }
+    if (order < 4 && isHome || !isHome){ shouldRender = true; }
     return(
         <>
             {shouldRender &&

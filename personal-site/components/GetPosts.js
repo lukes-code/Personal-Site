@@ -18,7 +18,13 @@ const GetPosts = ({ contentType, id }) => {
             client.getEntries({
                 content_type: `${contentType}`,
             }).then((res) => {
-                setArticle(res.items[id].fields);
+              for (let i = 0; i < res.items.length; i++) {
+                if (res.items[i].fields.id == id){
+                  console.log(`woop i is ${i} and id is ${id}`);
+                  setArticle(res.items[i].fields);
+                }
+              }
+                console.log(res.items.length);
                 setLoading(false);
             });
         }
