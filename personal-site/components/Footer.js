@@ -10,6 +10,6 @@ const StyledFooter = styled.footer`
 
 export default function Footer() {
     return <StyledFooter>
-        <p>I'm the footer</p>
+        <p>footer</p>
     </StyledFooter>;
 } 
