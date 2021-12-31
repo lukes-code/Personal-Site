@@ -52,6 +52,10 @@ const StyledArticle = styled.div`
   #author-details img {
       margin: 10px 10px 10px 0px;
   }
+  a {
+      text-decoration: underline;
+      color: blue;
+  }
 `;
 
 export default function FullArticle({ article, id, contentType }) {
