@@ -14,6 +14,7 @@ const StyledArticles = styled.div`
       display: flex;
       flex-wrap: nowrap;
       overflow: auto;
+      -webkit-overflow-scrolling: auto;
       margin: 40px 60px;
   }
   .articles-home::-webkit-scrollbar {

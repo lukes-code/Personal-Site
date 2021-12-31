@@ -50,7 +50,7 @@ export default function Article({ article, id, contentType, isHome, order }) {
                 <p className="article-date">{MakeDate(article.fields.date)}</p>
                 <p className="article-title">{article.fields.title}</p>
                 <Markdown className="article-short-text">{TextTruncate(article.fields.longContent, 125)}</Markdown>
-                <button>Read more -</button>
+                <button>Read more &#8594;</button>
             </StyledArticle>
         </Link>
     );
