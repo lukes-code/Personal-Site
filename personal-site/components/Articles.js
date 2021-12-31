@@ -13,8 +13,8 @@ const StyledArticles = styled.div`
   .articles-home {
       display: flex;
       flex-wrap: nowrap;
-      overflow: auto;
-      -webkit-overflow-scrolling: auto;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: scroll;
       margin: 40px 60px;
   }
   .articles-home::-webkit-scrollbar {
