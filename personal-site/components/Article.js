@@ -10,6 +10,7 @@ const StyledArticle = styled.div`
   max-width: 350px;
   margin: 10px 30px;
   margin-bottom: 60px;
+  cursor: pointer;
   img {
       width: 100%;
       border-radius: 4px 4px 0px 0px;
@@ -33,26 +34,24 @@ const StyledArticle = styled.div`
   .article-title {
       font-weight: bold;
   }
+  @media only screen and (max-width: 768px) {
+    min-width: 300px;
+    max-width: 300px;
+  }
 `;
 
 export default function Article({ article, id, contentType, isHome, order }) {
     const imagePath = `https:${article.fields.image.fields.file.url}`;
     const linkPath = `/${contentType}/${id}`;
-    let shouldRender = false;
-    if (order < 4 && isHome || !isHome){ shouldRender = true; }
     return(
-        <>
-            {shouldRender &&
-                <StyledArticle>
-                    <img src={imagePath} alt="article image" />
-                    <p className="article-date">{MakeDate(article.fields.date)}</p>
-                    <p className="article-title">{article.fields.title}</p>
-                    <Markdown className="article-short-text">{TextTruncate(article.fields.longContent, 125)}</Markdown>
-                    <Link href={linkPath} passHref>
-                        <button>Read more -</button>
-                    </Link>
-                </StyledArticle>
-            }
-        </>
+        <Link href={linkPath} passHref>
+            <StyledArticle>
+                <img src={imagePath} alt="article image" />
+                <p className="article-date">{MakeDate(article.fields.date)}</p>
+                <p className="article-title">{article.fields.title}</p>
+                <Markdown className="article-short-text">{TextTruncate(article.fields.longContent, 125)}</Markdown>
+                <button>Read more -</button>
+            </StyledArticle>
+        </Link>
     );
 }

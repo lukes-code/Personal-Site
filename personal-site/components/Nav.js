@@ -3,26 +3,32 @@ import styled from 'styled-components'
 
 const StyledNav = styled.nav`
     display: flex;
-    padding: 30px;
-    border-bottom: 3px solid var(--black); 
+    padding: 30px 90px;
     text-transform: uppercase;
     font-weight: bold;
     top: 0;
     color: var(--black);
     z-index: 5;
-    position: relative;
-    a {
-        flex: 1;
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    img {
+        cursor: pointer;
+    }
+    @media only screen and (max-width: 1920px) {
+        padding: 10px 50px;
+    }
+    @media only screen and (max-width: 768px) {
+        padding: 20px;
     }
 `;
 
 export default function Nav() {
     return(
         <StyledNav>
-            <Link href="/">Logo</Link>
-            <Link href="#">ABOUT</Link>
-            <Link href="/blog">BLOG</Link>
-            <Link href="#">PORTFOLIO</Link>
+            <Link href="/" passHref>
+                <img src="/static/logo.png" alt="logo" />
+            </Link>
         </StyledNav>
     );
 }

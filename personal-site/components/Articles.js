@@ -4,10 +4,38 @@ import Article from './Article';
 import styled from 'styled-components';
 
 const StyledArticles = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 60px 30px;
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 60px 30px;
+  }
+  .articles-home {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: auto;
+      margin: 40px 60px;
+  }
+  .articles-home::-webkit-scrollbar {
+    width: 1em;
+    border-radius: 10px;
+  }
+    
+  .articles-home::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: var(--black);
+  }
+    
+  .articles-home::-webkit-scrollbar-thumb {
+    background-color: var(--red);
+    border-radius: 10px;
+  }
+  @media only screen and (max-width: 768px) {
+      .articles-home {
+        margin: 40px 20px;
+      }
+  }
 `;
 
 export default function Articles({ contentType, isHome }) {
@@ -30,20 +58,25 @@ export default function Articles({ contentType, isHome }) {
             });
         }
     }, [client, contentType, loading]);
+    
+    
+    let homeClass = (isHome) ? "articles-home" : "articles";
 
     if (loading) return "loading...";
     return (
-        <StyledArticles>
-            {Object.keys(articles).map((article, i) => (
-                <Article 
-                    article={articles[i]} 
-                    key={i}
-                    order={i}
-                    id={articles[i].fields.id}
-                    contentType={contentType === 'blogPost' ? "blog" : "portfolio"}
-                    isHome={isHome}
-                />
-            ))}
+        <StyledArticles id="blog">
+            <div className={homeClass}>
+                {Object.keys(articles).map((article, i) => (
+                    <Article 
+                        article={articles[i]} 
+                        key={i}
+                        order={i}
+                        id={articles[i].fields.id}
+                        contentType={contentType === 'blogPost' ? "blog" : "portfolio"}
+                        isHome={isHome}
+                    />
+                ))}
+            </div>
         </StyledArticles>
     );
 } 

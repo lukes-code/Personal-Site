@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import NProgress from 'nprogress';
 import styled, { createGlobalStyle } from 'styled-components';
 import Router from 'next/router';
+import Nav from '../components/Nav'
 import '../components/styles/nprogress.css';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyles />
+      <Nav />
       <Component {...pageProps} />
       <Footer />
     </>
