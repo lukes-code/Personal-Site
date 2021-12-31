@@ -28,6 +28,21 @@ function MyApp({ Component, pageProps }) {
         <title>Lukescode</title>
         <meta name="description" content="A website for Lukescode" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+        `,
+          }}
+        />
       </Head>
       <GlobalStyles />
       <Nav />
