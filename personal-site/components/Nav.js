@@ -15,7 +15,7 @@ const StyledNav = styled.nav`
     img {
         cursor: pointer;
     }
-    @media only screen and (max-width: 1920px) {
+    @media only screen and (max-width: 1900px) {
         padding: 10px 50px;
     }
     @media only screen and (max-width: 768px) {

@@ -12,6 +12,11 @@ const StyledDiv = styled.div`
             max-width: 300px; 
         }
     }
+    @media only screen and (max-width: 600px) {
+        img {
+            max-width: 265px; 
+        }
+    }
 `;
 
 export default function ContentImage({ source, alt }) {

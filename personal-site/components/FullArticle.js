@@ -11,7 +11,7 @@ const StyledArticle = styled.div`
   margin: 60px auto;
   margin-bottom: 60px;
   @media only screen and (max-width: 768px) {
-    margin: 60px;
+    padding: 10px;
   }
   img {
       width: 100%;
@@ -42,6 +42,16 @@ const StyledArticle = styled.div`
   img {
       border-radius: 5px 5px 0px 0px;
   }
+  #author {
+      height: 40px;
+      width: 40px;
+  }
+  #author-details {
+      display: flex;
+  }
+  #author-details img {
+      margin: 10px 10px 10px 0px;
+  }
 `;
 
 export default function FullArticle({ article, id, contentType }) {
@@ -54,7 +64,10 @@ export default function FullArticle({ article, id, contentType }) {
             <p className="article-prefix">Thoughts and opinions are my own</p>
             <p className="article-title">{article.title}</p>
             <Markdown>{article.longContent}</Markdown>
-            <p className="article-date">{MakeDate(article.date)}</p>
+            <div id="author-details">
+                <img src="/static/author.png" alt="author" id="author" />
+                <p className="article-date">{MakeDate(article.date)}</p>
+            </div>
         </StyledArticle>
     );
 }
