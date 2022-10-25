@@ -15,7 +15,7 @@ export default function Home() {
             firstLine="Hello," 
             secondLine="I am Luke," 
             thirdLine="a developer from Wales, UK"
-            content="I am a self-taught developer. I find true joy in being able to make something out of nothing. After learning via Codecademy and YouTube I made a small portfolio of static frontend websites, compiled from cheap freelance work and free work for friends. Thanks to this I landed a full-time junior developer job at Next Venture, working primarily with LAMP stack in the insurance sector. Still driven by new tech, I spend most evenings either working on my Bsc Software Engineering degree course or learning new code frameworks and libraries by means of courses on YouTube, Udemy or by Wes Bos. I left Next Venture after nearly 3 years to start at my current job at Eliga Services, here I get to use the modern technologies commercially."
+            content="As a self-taught developer working commercially since early 2019, I have found a passion for problem-solving. Translating wireframes into beautiful responsive and accessible sites or implementing dynamic data and complex logic, I am constantly looking for ways to grow as the tech industry continues to evolve."
         />
         <ContentImage source="/static/hacktoberfest.jpg" alt="squad photo"/>
         <Banner />
@@ -24,7 +24,7 @@ export default function Home() {
             firstLine="Here," 
             secondLine="is some of" 
             thirdLine="my personal work"
-            content="Please note that most of my experience and work happens in work time. I am unable to share this work. If there is anything you would like to see further, please contact me."
+            content="A great deal of my experience has come commercially, to which I cannot share. I am more than happy to talk technical to make up for this, just reach out."
         />
         <Articles contentType="portfolio" isHome={true}/>
       </main>
