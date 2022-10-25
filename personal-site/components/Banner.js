@@ -30,7 +30,7 @@ export default function Banner() {
                 <p>JAVASCRIPT PHP HTML CSS REACT MYSQL</p>
                 <p>SASS NEXT.JS STYLED-COMPONENTS GIT JQUERY</p>
                 <p>SMARTY REST XML PHOTOSHOP FIREBASE</p>
-                <p>GITHUB FIGMA ADOBE XD SVN PREMIERE PRO</p>
+                <p>GITHUB FIGMA CI/CD SVN TYPESCRIPT</p>
             </div>
         </StyledBanner>
     );
