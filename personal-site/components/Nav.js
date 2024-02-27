@@ -23,7 +23,7 @@ export default function Nav() {
     return(
         <StyledNav>
             <Link href="/" passHref >
-            &#8592; Homes
+            &#8592; Home
             </Link>
         </StyledNav>
     );
